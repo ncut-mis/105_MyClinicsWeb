@@ -29,7 +29,7 @@
                             <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ __('生日') }}</label>
 
                             <div class="col-md-6">
-                                <input id="birthday" type="text" class="form-control{{ $errors->has('birthday') ? ' is-invalid' : '' }}" name="birthday" value="{{ old('birthday') }}" required autofocus>
+                                <input id="birthday" type="text" class="form-control{{ $errors->has('birthday') ? ' is-invalid' : '' }}" name="birthday" value="{{ old('birthday') }}" required>
 
                                 @if ($errors->has('birthday'))
                                     <span class="invalid-feedback" role="alert">
@@ -43,7 +43,7 @@
                             <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('電話') }}</label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" required autofocus>
+                                <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone"  required >
 
                                 @if ($errors->has('phone'))
                                     <span class="invalid-feedback" role="alert">
@@ -57,7 +57,7 @@
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('住址') }}</label>
 
                             <div class="col-md-6">
-                                <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address') }}" required autofocus>
+                                <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" required >
 
                                 @if ($errors->has('address'))
                                     <span class="invalid-feedback" role="alert">
@@ -71,7 +71,7 @@
                             <label for="contact_person" class="col-md-4 col-form-label text-md-right">{{ __('聯絡人') }}</label>
 
                             <div class="col-md-6">
-                                <input id="contact_person" type="text" class="form-control{{ $errors->has('contact_person') ? ' is-invalid' : '' }}" name="contact_person" value="{{ old('contact_person') }}" required autofocus>
+                                <input id="contact_person" type="text" class="form-control{{ $errors->has('contact_person') ? ' is-invalid' : '' }}" name="contact_person" required >
                             </div>
                         </div>
 
@@ -79,29 +79,29 @@
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('聯絡人電話') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cp_phone" type="text" class="form-control{{ $errors->has('cp_phone') ? ' is-invalid' : '' }}" name="cp_phone" value="{{ old('cp_phone') }}" required autofocus>
+                                <input id="cp_phone" type="text" class="form-control{{ $errors->has('cp_phone') ? ' is-invalid' : '' }}"  name="cp_phone"  required >
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="account" class="col-md-4 col-form-label text-md-right">{{ __('帳號') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('信箱') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="account" type="text" class="form-control{{ $errors->has('account') ? ' is-invalid' : '' }}" placeholder="請輸入身份證字號" name="account" value="{{ old('account') }}" required>
+                             <div class="col-md-6">
+                                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
 
-                                @if ($errors->has('account'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('account') }}</strong>
+                                 @if ($errors->has('email'))
+                                     <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
                                     </span>
-                                @endif
-                            </div>
+                                 @endif
+                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('密碼') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
@@ -115,7 +115,7 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('確認密碼') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="" class="form-control" name="password_confirmation" required>
+                                <input id="password-confirm" type="text" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
 
