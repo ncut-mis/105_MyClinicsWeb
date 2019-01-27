@@ -17,3 +17,8 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home.home');
 });
+
+Route::get('clinic',  ['as' => 'clinic.index',    'uses' => 'ClinicController@index']);
+Route::get('clinics/{id}',  ['as' => 'clinic.information',    'uses' => 'ClinicController@information']);
+Route::get('reservation/{id}',  ['as' => 'reservation.index',    'uses' => 'ReservationController@index']);
+Route::get('section/{id}',  ['as' => 'section.index',    'uses' => 'SectionController@index']);
