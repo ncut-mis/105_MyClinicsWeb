@@ -68,22 +68,6 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="contact_person" class="col-md-4 col-form-label text-md-right">{{ __('聯絡人') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="contact_person" type="text" class="form-control{{ $errors->has('contact_person') ? ' is-invalid' : '' }}" name="contact_person" required >
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('聯絡人電話') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="cp_phone" type="text" class="form-control{{ $errors->has('cp_phone') ? ' is-invalid' : '' }}"  name="cp_phone"  required >
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('信箱') }}</label>
 
                              <div class="col-md-6">
@@ -115,7 +99,7 @@
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('確認密碼') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="text" class="form-control" name="password_confirmation" required>
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
 
