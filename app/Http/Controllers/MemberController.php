@@ -15,8 +15,7 @@ class MemberController extends Controller
      */
     public function information(){
 
-        $id=auth()->user()->id;
-        $users=User::find($id)->get();
+        $users=User::where('id',Auth::user()->id)->get();
         $data=['user'=>$users];
         return view('member.information', $data);
 

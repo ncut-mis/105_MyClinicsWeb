@@ -41,19 +41,23 @@
             <tbody>
             @foreach($sections as $section)
                 <tr>
-                    <td width="100" style="text-align: center">{{$section->date}} {{$section->week}}</td>
-                    @if($section->section=='早')
+                    <td width="100" style="text-align: center">{{$section->date}}</td>
+                    @if($section->start_time=='9')
+                        @foreach($doctors as $doctor)
+                            @if($doctor->id==$section->doctor_id)
+                                <td width="100" style="text-align: center">{{$doctor->name}}</td>
+                            @endif
+                        @endforeach
+                    @else
+                        <td width="100" style="text-align: center"></td>
+                    @endif
+                    @if($section->start_time=='14')
                         <td width="100" style="text-align: center">{{$section->doctor_id}}</td>
                     @else
                         <td width="100" style="text-align: center"></td>
                     @endif
-                    @if($section->section=='午')
-                        <td width="100" style="text-align: center">{{$section->doctor_id}}</td>
-                    @else
-                        <td width="100" style="text-align: center"></td>
-                    @endif
-                    @if($section->section=='晚')
-                        <td width="100" style="text-align: center">{{$section->doctor_id}}</td>
+                    @if($section->start_time=='18')
+                        <td width="100" style="text-align: center">{{$secti：30on->doctor_id}}</td>
                     @else
                         <td width="100" style="text-align: center"></td>
                     @endif
