@@ -47,8 +47,10 @@
                         <div class="col-lg-3 col-lg-offset-2 col-md-10 col-md-offset-1">
                             <label>時段</label>
                             <select name="section" class="form-control"  id="section"  required data-validation-required-message="請選擇時段">
-                                <option value="0"></option>
+                            <option value="0"></option>
                             </select>
+
+
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -56,8 +58,10 @@
                         <div class="col-lg-3 col-lg-offset-2 col-md-10 col-md-offset-1">
                             <label>醫生</label>
                             <select name="doctor" class="form-control"  id="doctor"  required data-validation-required-message="請選擇醫生">
-                                <option value=""></option>
+                            <option value=""></option>
                             </select>
+
+
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>

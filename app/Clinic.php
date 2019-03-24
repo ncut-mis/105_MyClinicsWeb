@@ -11,4 +11,5 @@ class Clinic extends Model
     protected $fillable=[
         'name', 'tel', 'address', 'photo'
     ];
+
 }
