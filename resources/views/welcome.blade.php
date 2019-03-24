@@ -99,7 +99,7 @@
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">會員資料</a>
+                    <a href="{{route('member.information')}}">個人資訊</a>
                 </div>
             </div>
         </div>

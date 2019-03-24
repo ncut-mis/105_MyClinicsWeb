@@ -25,3 +25,5 @@ Route::get('section/{id}',  ['as' => 'section.index',    'uses' => 'SectionContr
 //搜尋
 Route::get('/search', ['as' => 'clinic.search'  , 'uses' => 'ClinicController@search']);
 
+//會員資料
+Route::get('member', ['as' => 'member.information'  , 'uses' => 'MemberController@information']);
