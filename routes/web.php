@@ -22,3 +22,6 @@ Route::get('clinic',  ['as' => 'clinic.index',    'uses' => 'ClinicController@in
 Route::get('clinics/{id}',  ['as' => 'clinic.information',    'uses' => 'ClinicController@information']);
 Route::get('reservation/{id}',  ['as' => 'reservation.index',    'uses' => 'ReservationController@index']);
 Route::get('section/{id}',  ['as' => 'section.index',    'uses' => 'SectionController@index']);
+//搜尋
+Route::get('/search', ['as' => 'clinic.search'  , 'uses' => 'ClinicController@search']);
+

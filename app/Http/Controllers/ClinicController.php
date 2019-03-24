@@ -18,5 +18,15 @@ class ClinicController extends Controller
         $data=['clinic'=>$clinics];
         return view('information', $data);
     }
+    public function search(Request $request)
+
+    {
+
+        $keyword =$request->input('keyword');
+        $clinics = Clinic::where('name','LIKE',"%$keyword%")->get();
+        $data	=	['clinics'	=> $clinics];
+        return View('clinic',$data);
+
+    }
 
 }

@@ -64,7 +64,16 @@
         </style>
     </head>
     <body>
+            <form action="{{ route('clinic.search') }}" >
+                    <div class="form-group">
+                        <a>勤益大聯盟</a>
+                        <input type="text" class="form-control" name="keyword" placeholder="搜尋">
+                        <button type="submit" >搜尋診所</button>
+                    </div>
+            </form>
+
         <div class="flex-center position-ref full-height">
+
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -86,11 +95,11 @@
 
                 <div class="links">
                     <a href="{{route('clinic.index')}}">預約看診</a>
-                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="https://laracasts.com">我的預約</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://github.com/laravel/laravel">會員資料</a>
                 </div>
             </div>
         </div>
