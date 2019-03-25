@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Area;
+use App\Category;
 use Illuminate\Http\Request;
 use App\Clinic;
 
@@ -29,16 +31,19 @@ class ClinicController extends Controller
     }
     public function advance_search_create()
     {
-        return View('clinic.advance_search');
+        $category = Category::orderBy('id')->get();
+        $area = Area::orderBy('id')->get();
+        $date = ['category'=>$category,'area'=>$area];
+        return View('clinic.advance_search',$date);
     }
 
     public function advance_search(Request $request)
     {
         $category=$request->input('category');
         $area=$request->input('area');
-        $category_id = Category::find($category);
-        $area_id = Area::find($area);
-        $clinics	=Clinic::where('category_id',$category_id)->where('area_id',$area_id)->get();
+        //$category_id = Category::find($category);
+        //$area_id = Area::find($area);
+        $clinics	=Clinic::where('category_id',$category)->where('area_id',$area)->get();
         $data	=	['clinics'	=> $clinics];
         return View('clinic.clinic',$data);
     }

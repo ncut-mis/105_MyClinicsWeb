@@ -33,17 +33,17 @@
         <div class="form-group">
             <label>科別：</label><br>
             <Select name=category style="width: 200px;" required data-validation-required-message="請選擇科別">
-                <Option Value="一般內科">一般內科</Option>
-                <Option Value="外科">外科</Option>
-                <Option Value="中醫">中醫</Option>
+                @foreach($category as $category)
+                    <Option value={{$category->id}}>{{$category->category}}</Option>
+                @endforeach
             </Select>
         </div>
         <div class="form-group">
             <label>地區：</label><br>
             <Select name=area style="width: 200px;" required data-validation-required-message="請選擇地區">
-                <Option Value="大里區">大里區</Option>
-                <Option Value="霧峰區">霧峰區</Option>
-                <Option Value="太平區">太平區</Option>
+                @foreach($area as $area)
+                    <Option value={{$area->id}}>{{$area->area}}</Option>
+                @endforeach
             </Select>
         </div>
         <div class="text-right">

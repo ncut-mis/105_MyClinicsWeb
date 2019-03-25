@@ -30,12 +30,12 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($users)
+            @foreach($users as $user)
                 <tr>
-                    <td width="100" style="text-align: center">{{$users->name}}</td>
-                    <td width="100" style="text-align: center">{{$users->birthday}}</td>
-                    <td width="100" style="text-align: center">{{$users->phone}}</td>
-                    <td width="100" style="text-align: center">{{$users->address}}</td>
+                    <td width="100" style="text-align: center">{{$user->name}}</td>
+                    <td width="100" style="text-align: center">{{$user->birthday}}</td>
+                    <td width="100" style="text-align: center">{{$user->phone}}</td>
+                    <td width="100" style="text-align: center">{{$user->address}}</td>
                 </tr>
             @endforeach
             </tbody>
