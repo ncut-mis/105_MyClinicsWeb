@@ -97,8 +97,6 @@
                     <a href="{{route('clinic.index')}}">所有診所</a>
                     <a href="{{route('clinic.advance_search.create')}}">找查診所</a>
                     <a href="https://laravel-news.com">我的預約</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
                     <a href="{{route('member.information')}}">個人資訊</a>
                 </div>
             </div>
