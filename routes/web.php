@@ -17,18 +17,27 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home.home');
 });
-
+//診所列表(按鈕)
 Route::get('clinic',  ['as' => 'clinic.index',    'uses' => 'ClinicController@index']);
+//某診所資訊
 Route::get('clinics/{id}',  ['as' => 'clinic.information',    'uses' => 'ClinicController@information']);
+//根據診所預約
 Route::get('reservation/{id}',  ['as' => 'reservation.index',    'uses' => 'ReservationController@index']);
-Route::get('section/{id}',  ['as' => 'section.index',    'uses' => 'SectionController@index']);
-//搜尋
-Route::get('/search', ['as' => 'clinic.search'  , 'uses' => 'ClinicController@search']);
+//根據醫生預約
+Route::get('reservation2/{id}',  ['as' => 'reservation.index2',    'uses' => 'ReservationController@index2']);
+//儲存預約
+Route::get('section/{id}/store', ['as' => 'reservation.store',     'uses' => 'ReservationController@store']);
 
+
+//簡易搜尋結果
+Route::get('/search', ['as' => 'clinic.search'  , 'uses' => 'ClinicController@search']);
+//進階搜尋選單
 Route::get('clinic/advance_search/create', ['as' => 'clinic.advance_search.create'  , 'uses' => 'ClinicController@advance_search_create']);
+//進階搜尋結果
 Route::get('clinic/advance_search', ['as' => 'clinic.advance_search'  , 'uses' => 'ClinicController@advance_search']);
 
 
 
 //會員資料
 Route::get('member', ['as' => 'member.information'  , 'uses' => 'MemberController@information']);
+
