@@ -28,14 +28,14 @@
                 <div class="row">
                     <form action="/reservation/{{ $clinic->id }}" method="GET">
                         {{ csrf_field() }}
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <h2>
-                        <label>診所名稱：</label>
-                        <td>{{ $clinic->name}}</td>
-                            </h2>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <h2>
+                            <label>診所名稱：</label>
+                            <td>{{ $clinic->name}}</td>
+                                </h2>
+                            </div>
                         </div>
-                    </div>
 
                         <div class="form-group">
                             <div class="col-sm-12">
@@ -69,15 +69,39 @@
                                 </h2>
                             </div>
                         </div>
-                        <div class="col-sm-12">
+                        <div>
+                        @foreach($staff as $staff)
+                            @foreach($doctors as $doctor)
+                                @if($staff->id == $doctor->staff_id)
+                                     <div class="form-group" >
+                                         <div class="col-sm-12">
+                                             <h2>
+                                                 <label>醫生：</label>
+                                                 <a href="/reservation2/{{ $doctor->id }}">
+                                                     <td>{{ $staff->name}}</td>
+                                                 </a>
+                                             </h2>
+                                         </div>
+                                     </div>
+                                 @endif
+                            @endforeach
+                        @endforeach
+                        </div>
+                        <div>
 
-                        <button type="submit" class="btn btn-default">
-                            <i class="fa fa-plus"></i> <h4>預約診所 </h4>
-                        </button>
+                            <div class="col-sm-12">
+
+                            <button type="submit" class="btn btn-default">
+
+                                <i class="fa fa-plus"></i> <h4>預約診所 </h4>
+
+                            </button>
+
+                            </div>
 
                         </div>
                     </form>
-                    </div>
+                </div>
             </div>
         </div>
     </article>
