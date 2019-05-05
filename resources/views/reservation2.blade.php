@@ -44,22 +44,40 @@
                     <td width="100" style="text-align: center">{{$section->date}}</td>
                     @if($section->start_time=='9')
                         @foreach($doctors as $doctor)
-                            @if($doctor->id==$section->doctor_id)
-                                <td width="100" style="text-align: center">{{$doctor->name}}</td>
+                            @if($section->doctor_id == $doctor->id)
+                                @foreach($staffs as $staff)
+                                    @if($doctor->staff_id == $staff->id)
+                        <td width="100" style="text-align: center"><a href="/section/{{$section->id}}/store">{{$staff->name}}</a></td>
+                                    @endif
+                                @endforeach
                             @endif
                         @endforeach
                     @else
                         <td width="100" style="text-align: center"></td>
                     @endif
                     @if($section->start_time=='14')
-                        <td width="100" style="text-align: center">{{$section->doctor_id}}</td>
+                        @foreach($doctors as $doctor)
+                            @if($section->doctor_id == $doctor->id)
+                                @foreach($staffs as $staff)
+                                    @if($doctor->staff_id == $staff->id)
+                                        <td width="100" style="text-align: center"><a href="/section/{{$section->id}}/store">{{$staff->name}}</a></td>
+                                    @endif
+                                @endforeach
+                            @endif
+                        @endforeach
                     @else
                         <td width="100" style="text-align: center"></td>
                     @endif
                     @if($section->start_time=='18')
-                        <td width="100" style="text-align: center">{{$secti：30on->doctor_id}}</td>
-                    @else
-                        <td width="100" style="text-align: center"></td>
+                        @foreach($doctors as $doctor)
+                            @if($section->doctor_id == $doctor->id)
+                                @foreach($staffs as $staff)
+                                    @if($doctor->staff_id == $staff->id)
+                                        <td width="100" style="text-align: center"><a href="/section/{{$section->id}}/store">{{$staff->name}}</a></td>
+                                    @endif
+                                @endforeach
+                            @endif
+                        @endforeach
                     @endif
                 </tr>
             @endforeach
