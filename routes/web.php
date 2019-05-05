@@ -40,4 +40,5 @@ Route::get('clinic/advance_search', ['as' => 'clinic.advance_search'  , 'uses' =
 
 //會員資料
 Route::get('member', ['as' => 'member.information'  , 'uses' => 'MemberController@information']);
-
+//查看我的預約
+Route::get('myreservation', ['as' => 'reservation.myreservation'  , 'uses' => 'ReservationController@myreservation']);

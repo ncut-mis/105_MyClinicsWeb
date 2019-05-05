@@ -51,7 +51,9 @@ class ReservationController extends Controller
         $reservations = Reservation::where('member_id',$user)->orderby('date')->get();
         $sections = Section::get();
         $clinics = Clinic::get();
-        $data=['sections'=>$sections,'reservations'=>$reservations,'clinics'=>$clinics];
+        $doctors = Doctor::all();
+        $staffs = Staff::all();
+        $data=['sections'=>$sections,'reservations'=>$reservations,'clinics'=>$clinics,'staffs'=>$staffs,'doctors'=>$doctors];
         return view('member.reservation', $data);
     }
 
