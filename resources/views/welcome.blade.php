@@ -98,6 +98,7 @@
                     <a href="{{route('clinic.advance_search.create')}}">找查診所</a>
                     <a href="https://laravel-news.com">我的預約</a>
                     <a href="{{route('member.information')}}">個人資訊</a>
+                    <a href="{{route('favorite_clinic')}}">我的診所</a>
                 </div>
             </div>
         </div>

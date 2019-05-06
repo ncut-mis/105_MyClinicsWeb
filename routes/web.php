@@ -32,3 +32,8 @@ Route::get('clinic/advance_search', ['as' => 'clinic.advance_search'  , 'uses' =
 
 //會員資料
 Route::get('member', ['as' => 'member.information'  , 'uses' => 'MemberController@information']);
+
+//我的診所
+Route::get('favorite_clinic',  ['as' => 'favorite_clinic',    'uses' => 'FavoriteClinicController@index']);
+Route::get('clinic/{id}',    ['as' => 'favorite_clinic.create' , 'uses' => 'FavoriteClinicController@create']);
+

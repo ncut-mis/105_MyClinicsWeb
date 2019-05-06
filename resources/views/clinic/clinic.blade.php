@@ -14,6 +14,7 @@
                         <h1>診所選擇</h1>
                         <hr class="small">
                         <span class="subheading">診所名稱</span>
+                        <span class="subheading">{{ __('  加入我的診所')}}</span>
                     </div>
                 </div>
             </div>
@@ -38,6 +39,9 @@
                                        <i class="fa fa-plus"></i> {{ $clinic->name}}
                                     </button>
                                 </form>
+                            </td>
+                            <td>
+                                <a href="{{route('favorite_clinic.create', $clinic->id)}}"> Add </a>
                             </td>
                         </tr>
                         </thead>

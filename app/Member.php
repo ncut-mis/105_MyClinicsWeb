@@ -13,4 +13,8 @@ class Member extends Model
         'name', 'birthday', 'number','phone','adderss'
     ];
 
+    public function favoriteclinic()
+    {
+        return $this->hasMany(FavoriteClinic::class);
+    }
 }
