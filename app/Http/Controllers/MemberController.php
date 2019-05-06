@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use app\User;
 use Auth;
+use app\First_consultation;
 
 class MemberController extends Controller
 {
@@ -14,9 +15,13 @@ class MemberController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function information(){
+        if(Auth::user()==null){
+            return view('auth.login');
+        }
 
         $users = Auth::user();
-        $data=['user'=>$users];
+        $first = Auth::user()->first_consultation;
+        $data=['user'=>$users,'first'=>$first];
         return view('member.information', $data);
 
     }

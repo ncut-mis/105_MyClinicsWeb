@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Area;
 use App\Category;
+use App\Doctor;
+use App\Staff;
 use Illuminate\Http\Request;
 use App\Clinic;
 
@@ -17,7 +19,9 @@ class ClinicController extends Controller
 
     public function information($id){
         $clinics=Clinic::find($id);
-        $data=['clinic'=>$clinics];
+        $doctors = Doctor::where('clinic_id',$id)->get();
+        $staff = Staff::where('clinic_id',$id)->where('position_id','1')->get();
+        $data=['clinic'=>$clinics,'doctors'=>$doctors,'staff'=>$staff];
         return view('clinic.information', $data);
     }
     public function search(Request $request)
