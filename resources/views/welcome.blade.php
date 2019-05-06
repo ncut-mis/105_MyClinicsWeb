@@ -45,13 +45,13 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 50px;
             }
 
             .links > a {
                 color: #fff;
-                padding: 0 25px;
-                font-size: 13px;
+                padding: 10px;
+                font-size: 10px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
@@ -98,6 +98,7 @@
                     <a href="{{route('clinic.advance_search.create')}}">找查診所</a>
                     <a href="{{route('reservation.myreservation')}}">我的預約</a>
                     <a href="{{route('member.information')}}">個人資訊</a>
+                    <a >我的預約</a>
                 </div>
             </div>
         </div>
