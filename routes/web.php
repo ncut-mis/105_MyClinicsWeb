@@ -27,6 +27,8 @@ Route::get('reservation/{id}',  ['as' => 'reservation.index',    'uses' => 'Rese
 Route::get('reservation2/{id}',  ['as' => 'reservation.index2',    'uses' => 'ReservationController@index2']);
 //儲存預約
 Route::get('section/{id}/store', ['as' => 'reservation.store',     'uses' => 'ReservationController@store']);
+//確認預約
+Route::get('section/{id}/check', ['as' => 'reservation.check',     'uses' => 'ReservationController@check']);
 
 
 //簡易搜尋結果
@@ -49,4 +51,9 @@ Route::get('clinic/{id}',    ['as' => 'favorite_clinic.create' , 'uses' => 'Favo
 
 //查看我的預約
 Route::get('myreservation', ['as' => 'reservation.myreservation'  , 'uses' => 'ReservationController@myreservation']);
-
+//新增預約提醒
+Route::get('myreservation/{id}/addreminding', ['as' => 'reservation.addreminding'  , 'uses' => 'ReservationController@addreminding']);
+//儲存預約提醒
+Route::get('myreservation/storereminding', ['as' => 'reservation.storereminding'  , 'uses' => 'ReservationController@storereminding']);
+//刪除預約
+Route::get('myreservation/{id}/delete', ['as' => 'reservation.delete'  , 'uses' => 'ReservationController@delete']);

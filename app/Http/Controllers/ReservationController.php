@@ -30,15 +30,30 @@ class ReservationController extends Controller
     /**
      * @param $id
      */
-    public function store($id){
+    public function check($id){
         $sections = Section::find($id);
-        $reservation = Reservation::where('section_id',$id)->count();
+        $clinics = Clinic::all();
+        $doctors = Doctor::all();
+        $staffs = Staff::all();
+        $data = ['sections'=>$sections,'clinics'=>$clinics,'staffs'=>$staffs,'doctors'=>$doctors];
+        return view('checkreservation',$data);
+    }
+    public function store(Request $request,$id){
+        $sections = Section::find($id);
+        $reservation = $sections->next_register_no;
+        $reminding_time=$request->input('reminding_time');
+        $reminding_no=$request->input('reminding_no');
         Reservation::create([
             'section_id' => $id,
             'member_id' => auth()->user()->id,
-            'number' => $reservation+1,
-            'date' => $sections->date,
+            'reservation_no' => $reservation,
+            'reminding_time' =>$reminding_time,
+            'reminding_no' =>$reminding_no,
+            'status' => '-1',
         ]);
+        $sections->next_register_no = $reservation+1;
+        $sections->save();
+        //Reservation::all()->update(['next_register_no' =>$reservation+1]);
         return view('welcome');
     }
 
@@ -48,7 +63,7 @@ class ReservationController extends Controller
             return view('auth.login');
         }
         $user = Auth::user()->id;
-        $reservations = Reservation::where('member_id',$user)->orderby('date')->get();
+        $reservations = Reservation::where('member_id',$user)->orderby('id')->get();
         $sections = Section::get();
         $clinics = Clinic::get();
         $doctors = Doctor::all();
@@ -56,6 +71,28 @@ class ReservationController extends Controller
         $data=['sections'=>$sections,'reservations'=>$reservations,'clinics'=>$clinics,'staffs'=>$staffs,'doctors'=>$doctors];
         return view('member.reservation', $data);
     }
+
+    public function addreminding($id){
+        $reservations = Reservation::find($id);
+        $data = ['reservations'=>$reservations];
+        return view('reminding',$data);
+    }
+    public function storereminding(Request $request,$id){
+        $reminding_time=$request->input('reminding_time');
+        $reminding_no=$request->input('reminding_no');
+        //$reservations = Reservation::all()->update(['reminding_time' =>$reminding_time]);
+        //$reservations = Reservation::all()->update(['reminding_no' =>$reminding_no]);
+        $reservations = Reservation::find($id);
+        $reservations->reminding_time=$reminding_time;
+        $reservations->reminding_no=$reminding_no;
+        $reservations->save();
+        return view('welcome');
+    }
+
+    public function delete($id){
+        $reservations = Reservation::find($id)->delete();
+    return view('welcome');
+}
 
 
 }

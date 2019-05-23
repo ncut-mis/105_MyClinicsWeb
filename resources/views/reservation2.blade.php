@@ -42,12 +42,12 @@
             @foreach($sections as $section)
                 <tr>
                     <td width="100" style="text-align: center">{{$section->date}}</td>
-                    @if($section->start_time=='9')
+                    @if($section->start=='9')
                         @foreach($doctors as $doctor)
                             @if($section->doctor_id == $doctor->id)
                                 @foreach($staffs as $staff)
                                     @if($doctor->staff_id == $staff->id)
-                        <td width="100" style="text-align: center"><a href="/section/{{$section->id}}/store">{{$staff->name}}</a></td>
+                        <td width="100" style="text-align: center"><a href="/section/{{$section->id}}/check">{{$staff->name}}</a></td>
                                     @endif
                                 @endforeach
                             @endif
@@ -55,7 +55,7 @@
                     @else
                         <td width="100" style="text-align: center"></td>
                     @endif
-                    @if($section->start_time=='14')
+                    @if($section->start=='14')
                         @foreach($doctors as $doctor)
                             @if($section->doctor_id == $doctor->id)
                                 @foreach($staffs as $staff)
@@ -68,7 +68,7 @@
                     @else
                         <td width="100" style="text-align: center"></td>
                     @endif
-                    @if($section->start_time=='18')
+                    @if($section->start=='18')
                         @foreach($doctors as $doctor)
                             @if($section->doctor_id == $doctor->id)
                                 @foreach($staffs as $staff)
