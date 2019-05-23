@@ -30,7 +30,7 @@
                 <div class="row">
                     <table class="table table-hover">
                         <thead>
-                        @foreach ($clinics as $index => $clinic)
+                        @foreach ($clinics as $clinic)
                         <tr>
                             <td>
                                 <form action="/clinics/{{ $clinic->id }}" method="GET">
