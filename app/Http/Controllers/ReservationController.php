@@ -37,7 +37,7 @@ class ReservationController extends Controller
             'section_id' => $id,
             'member_id' => auth()->user()->id,
             'number' => $reservation+1,
-            'date' => $sections->date,
+            'created_at' => date("Y-m-d",strtotime('8hours')),
         ]);
         return view('welcome');
     }
