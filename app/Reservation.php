@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reservation extends Model
 {
-    protected $table ='reservations';
-    protected $fillable =['section_id','member_id','number','date'];
+    protected $table ='registers';
+    protected $fillable =['section_id','member_id','reservation_no','status','reminding_time','reminding_no'];
 
     public function section()
     {

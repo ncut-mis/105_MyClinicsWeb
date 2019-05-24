@@ -47,7 +47,7 @@
                             @if($section->doctor_id == $doctor->id)
                                 @foreach($staffs as $staff)
                                     @if($doctor->staff_id == $staff->id)
-                        <td width="100" style="text-align: center"><a href="/section/{{$section->id}}/store">{{$staff->name}}</a></td>
+                        <td width="100" style="text-align: center"><a href="/section/{{$section->id}}/check">{{$staff->name}}</a></td>
                                     @endif
                                 @endforeach
                             @endif
