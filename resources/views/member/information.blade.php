@@ -44,22 +44,35 @@
                 </tbody>
             </table>
             <div>
-                <h4><p>初診資料</p></h4>
+                <h4><p>就醫紀錄</p></h4>
             </div>
             <table>
                 <thead>
                 <tr>
-                    <td width="100" style="text-align: center">病史</td>
-                    <td width="100" style="text-align: center">過敏藥物</td>
+                    <td width="100" style="text-align: center">診所名稱</td>
+                    <td width="100" style="text-align: center">症狀</td>
+                    <td width="100" style="text-align: center">日期</td>
                     <td width="100" style="text-align: center">附註</td>
                 </tr>
                 </thead>
                 <tbody>
+                @foreach($diagnoses as $diagnosis)
                 <tr>
-                    <td width="100" style="text-align: center"></td>
-                    <td width="100" style="text-align: center"></td>
-                    <td width="100" style="text-align: center"></td>
+                    @foreach($doctors as $doctor)
+                        @if($diagnosis->doctor_id == $doctor->id)
+                            @foreach($clinics as $clinic)
+                                @if($doctor->clinic_id == $clinic->id)
+                                    <td width="100" style="text-align: center">{{$clinic->name}}</td>
+                                @endif
+                            @endforeach
+                        @endif
+                    @endforeach
+
+                    <td width="100" style="text-align: center">{{$diagnosis->symptom}}</td>
+                    <td width="100" style="text-align: center">{{$diagnosis->date}}</td>
+                    <td width="100" style="text-align: center">{{$diagnosis->note}}</td>
                 </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>

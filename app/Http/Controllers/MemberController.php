@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Clinic;
+use App\Diagnosis;
+use App\Doctor;
 use Illuminate\Http\Request;
 use app\User;
 use Auth;
-use app\First_consultation;
-
 class MemberController extends Controller
 {
     /**
@@ -19,9 +20,11 @@ class MemberController extends Controller
             return view('auth.login');
         }
 
-        $users = Auth::user();
-        $first = Auth::user()->first_consultation;
-        $data=['user'=>$users,'first'=>$first];
+        $users = Auth::user()->id;
+        $diagnoses = Diagnosis::where('member_id',$users)->get();
+        $clinics = Clinic::all();
+        $doctors = Doctor::all();
+        $data=['user'=>$users,'diagnoses'=>$diagnoses,'clinics'=>$clinics,'doctors'=>$doctors];
         return view('member.information', $data);
 
     }
