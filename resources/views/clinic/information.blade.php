@@ -55,17 +55,21 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12">
-                                <h2>
-                            <label>圖片：</label>
-                            <td></td>
-                                </h2>
+                            <h2>
+                            <label>診所環境：</label>
+                              @if($clinic->photo!==null)
+                            <td> <img src="{{url('img/clinic/'. $clinic->photo)}}"class="img-thumbnail"></td>
+                                  @else
+                                    <td>診所尚未上傳照片</td>
+                              @endif
+                            </h2>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12">
                                 <h2>
                             <label>營業時間：</label>
-                            <td></td>
+                            <td>{{ $clinic->per_week_sections}}<br></td>
                                 </h2>
                             </div>
                         </div>

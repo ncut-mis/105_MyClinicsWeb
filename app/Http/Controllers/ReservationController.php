@@ -46,10 +46,12 @@ class ReservationController extends Controller
         Reservation::create([
             'section_id' => $id,
             'member_id' => auth()->user()->id,
+            'number' => $reservation+1,
             'reservation_no' => $reservation,
             'reminding_time' =>$reminding_time,
             'reminding_no' =>$reminding_no,
             'status' => '-1',
+            'created_at' => date("Y-m-d",strtotime('8hours')),
         ]);
         $sections->next_register_no = $reservation+1;
         $sections->save();
