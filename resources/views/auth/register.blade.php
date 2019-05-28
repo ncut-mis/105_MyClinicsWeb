@@ -40,6 +40,20 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="number" class="col-md-4 col-form-label text-md-right">{{ __('身分證字號') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="number" type="text" class="form-control{{ $errors->has('number') ? ' is-invalid' : '' }}" name="number" value="{{ old('number') }}" required>
+
+                                @if ($errors->has('number'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('number') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('電話') }}</label>
 
                             <div class="col-md-6">
