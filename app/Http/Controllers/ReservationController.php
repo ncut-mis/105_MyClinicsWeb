@@ -46,7 +46,6 @@ class ReservationController extends Controller
         Reservation::create([
             'section_id' => $id,
             'member_id' => auth()->user()->id,
-            'number' => $reservation+1,
             'reservation_no' => $reservation,
             'reminding_time' =>$reminding_time,
             'reminding_no' =>$reminding_no,
