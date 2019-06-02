@@ -24,6 +24,14 @@ class ClinicController extends Controller
         $data=['clinic'=>$clinics,'doctors'=>$doctors,'staff'=>$staff];
         return view('clinic.information', $data);
     }
+
+    public function doctorinformation($id){
+        $doctors = Doctor::find($id);
+        $staffs = Staff::all();
+        $data = ['doctors'=>$doctors,'staffs'=>$staffs];
+        return view('clinic.doctorinformation',$data);
+    }
+
     public function search(Request $request)
     {
 

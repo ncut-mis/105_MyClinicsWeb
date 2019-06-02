@@ -84,6 +84,9 @@
                                                  <a href="/reservation2/{{ $doctor->id }}">
                                                      <td>{{ $staff->name}}</td>
                                                  </a>
+                                                 <a href="/doctor/{{ $doctor->id }}">
+                                                     <td>/查看資訊</td>
+                                                 </a>
                                              </h2>
                                          </div>
                                      </div>

@@ -21,6 +21,9 @@ Route::get('/home', function () {
 Route::get('clinic',  ['as' => 'clinic.index',    'uses' => 'ClinicController@index']);
 //某診所資訊
 Route::get('clinics/{id}',  ['as' => 'clinic.information',    'uses' => 'ClinicController@information']);
+//某醫生資訊
+Route::get('doctor/{id}',  ['as' => 'clinic.doctorinformation',    'uses' => 'ClinicController@doctorinformation']);
+
 //根據診所預約
 Route::get('reservation/{id}',  ['as' => 'reservation.index',    'uses' => 'ReservationController@index']);
 //根據醫生預約
@@ -40,7 +43,7 @@ Route::get('clinic/advance_search', ['as' => 'clinic.advance_search'  , 'uses' =
 
 
 
-//會員資料
+//會員資料(就醫紀錄)
 Route::get('member', ['as' => 'member.information'  , 'uses' => 'MemberController@information']);
 
 
@@ -54,6 +57,6 @@ Route::get('myreservation', ['as' => 'reservation.myreservation'  , 'uses' => 'R
 //新增預約提醒
 Route::get('myreservation/{id}/addreminding', ['as' => 'reservation.addreminding'  , 'uses' => 'ReservationController@addreminding']);
 //儲存預約提醒
-Route::get('myreservation/storereminding', ['as' => 'reservation.storereminding'  , 'uses' => 'ReservationController@storereminding']);
+Route::get('myreservation/{id}/storereminding', ['as' => 'reservation.storereminding'  , 'uses' => 'ReservationController@storereminding']);
 //刪除預約
 Route::get('myreservation/{id}/delete', ['as' => 'reservation.delete'  , 'uses' => 'ReservationController@delete']);
