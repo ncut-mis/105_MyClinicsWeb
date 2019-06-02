@@ -54,7 +54,7 @@ Route::get('myreservation', ['as' => 'reservation.myreservation'  , 'uses' => 'R
 //新增預約提醒
 Route::get('myreservation/{id}/addreminding', ['as' => 'reservation.addreminding'  , 'uses' => 'ReservationController@addreminding']);
 //儲存預約提醒
-Route::get('myreservation/storereminding', ['as' => 'reservation.storereminding'  , 'uses' => 'ReservationController@storereminding']);
+Route::get('myreservations/{id}/torereminding', ['as' => 'reservation.storereminding'  , 'uses' => 'ReservationController@storereminding']);
 //刪除預約
 Route::get('myreservation/{id}/delete', ['as' => 'reservation.delete'  , 'uses' => 'ReservationController@delete']);
 
