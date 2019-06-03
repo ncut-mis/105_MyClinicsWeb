@@ -12,7 +12,7 @@
 */
 Route::auth();
 Route::get('/', function () {
-    return view('welcome');
+    return view('newhome');
 });
 Route::get('/home', function () {
     return view('home.home');
