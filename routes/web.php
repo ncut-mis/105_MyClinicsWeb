@@ -57,6 +57,15 @@ Route::get('myreservation', ['as' => 'reservation.myreservation'  , 'uses' => 'R
 //新增預約提醒
 Route::get('myreservation/{id}/addreminding', ['as' => 'reservation.addreminding'  , 'uses' => 'ReservationController@addreminding']);
 //儲存預約提醒
+
 Route::get('myreservation/{id}/storereminding', ['as' => 'reservation.storereminding'  , 'uses' => 'ReservationController@storereminding']);
+
+Route::get('myreservations/{id}/torereminding', ['as' => 'reservation.storereminding'  , 'uses' => 'ReservationController@storereminding']);
+
 //刪除預約
 Route::get('myreservation/{id}/delete', ['as' => 'reservation.delete'  , 'uses' => 'ReservationController@delete']);
+
+//firebase測試
+Route::get('/fire',  ['as' => 'fire.fire',    'uses' => 'ReservationController@fire']);
+Route::get('/fire2',  ['as' => 'fire.fire2',    'uses' => 'ReservationController@fire2']);
+Route::get('/fire3',  ['as' => 'fire.fire3',    'uses' => 'ReservationController@fire3']);

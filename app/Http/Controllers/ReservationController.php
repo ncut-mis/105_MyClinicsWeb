@@ -46,7 +46,6 @@ class ReservationController extends Controller
         Reservation::create([
             'section_id' => $id,
             'member_id' => auth()->user()->id,
-            'number' => $reservation+1,
             'reservation_no' => $reservation,
             'reminding_time' =>$reminding_time,
             'reminding_no' =>$reminding_no,
@@ -95,6 +94,25 @@ class ReservationController extends Controller
         $reservations = Reservation::find($id)->delete();
     return view('welcome');
 }
+    public function fire()
+    {
+        date_default_timezone_set("Asia/Taipei");
+        $date=date("Y-m-d");
+        $time=date("H:i:s");
+        $number2=Section::where('date',$date)->where('date',$date)->where('start','<',$time)->where('end','>',$time)->get()->first();
+        $registers=$number2->registers()->where('member_id',auth()->user()->id)->get()->first();
+        $a=$registers->number-$registers->reminding_no;
 
+        $data=['number2'=>$number2,'registers'=>$registers,'a'=>$a];
+        return view('fire',$data);
+    }
+    public function fire2()
+    {
+        return view('fire2');
+    }
 
+    public function fire3()
+    {
+        return view('fire3');
+    }
 }
