@@ -56,20 +56,20 @@
             <div class="form-group">
                 <label>看診前提醒：</label><br>
                 <Select name=reminding_time style="width: 200px;" required data-validation-required-message="看診前提醒">
-                    <Option></Option>
-                    <Option>看診前一天</Option>
-                    <Option>看診前三小時</Option>
-                    <Option>看診前一小時</Option>
-                    <Option>看診前半小時</Option>
+                    <Option value=""></Option>
+                    <Option value="02:00:00">看診前二小時</Option>
+                    <Option value="01:30:00">看診前一小時半</Option>
+                    <Option value="01:00:00">看診前一小時</Option>
+                    <Option value="00:30:00">看診前半小時</Option>
                 </Select>
             </div>
             <div class="form-group">
                 <label>看診號碼提醒：</label><br>
                 <Select name=reminding_no style="width: 200px;" required data-validation-required-message="看診號碼提醒">
-                    <Option></Option>
-                    <Option>前10號</Option>
-                    <Option>前5號</Option>
-                    <Option>前3號</Option>
+                    <Option value=""></Option>
+                    <Option value="10">前10號</Option>
+                    <Option value="5">前5號</Option>
+                    <Option value="3">前3號</Option>
                 </Select>
             </div>
 
