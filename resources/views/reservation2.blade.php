@@ -42,7 +42,7 @@
             @foreach($sections as $section)
                 <tr>
                     <td width="100" style="text-align: center">{{$section->date}}</td>
-                    @if($section->start=='9:00:00'&&$section->end=='12:00:00')
+                    @if($section->start=='09:00:00'&&$section->end=='12:00:00')
                         @foreach($doctors as $doctor)
                             @if($section->doctor_id == $doctor->id)
                                 @foreach($staffs as $staff)
