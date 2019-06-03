@@ -55,7 +55,7 @@ class ReservationController extends Controller
         $sections->next_register_no = $reservation+1;
         $sections->save();
         //Reservation::all()->update(['next_register_no' =>$reservation+1]);
-        return view('welcome');
+        return view('newhome');
     }
 
     public function myreservation(){
@@ -87,12 +87,12 @@ class ReservationController extends Controller
         $reservations->reminding_time=$reminding_time;
         $reservations->reminding_no=$reminding_no;
         $reservations->save();
-        return view('welcome');
+        return view('newhome');
     }
 
     public function delete($id){
         $reservations = Reservation::find($id)->delete();
-    return view('welcome');
+    return view('newhome');
 }
     public function fire()
     {
