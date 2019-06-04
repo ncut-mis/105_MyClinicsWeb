@@ -20,7 +20,6 @@
         <link href="css/style.css" rel="stylesheet" />
         <!-- Styles -->
         <style>
-
             .full-height {
                 height: 100vh;
             }
@@ -112,13 +111,12 @@
                                 <span class="icon-bar"></span>
                             </button>
                             <a class="navbar-brand" href="/">勤益大聯盟</a>
-
                         </div>
                         <div id="navbar" class="navbar-collapse collapse">
 
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="/">首頁</a></li>
-                                <li><a href="{{route('clinic.index')}}">所有診所</a></li>
+                                <li><a href="{{route('clinic.index')}}">線上預約</a></li>
                                 <li><a href="{{route('clinic.advance_search.create')}}">找查診所</a></li>
                                 <li><a href="{{route('reservation.myreservation')}}">我的預約</a></li>
                                 <li><a href="{{route('member.information')}}">個人資訊</a></li>
@@ -140,7 +138,6 @@
                 </nav>
             </div>
         </div>
-
     </header>
 
     <script src="js/jquery.js"></script>
