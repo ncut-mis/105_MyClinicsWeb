@@ -55,7 +55,7 @@ class ReservationController extends Controller
         $sections->next_register_no = $reservation+1;
         $sections->save();
         //Reservation::all()->update(['next_register_no' =>$reservation+1]);
-        return view('welcome');
+        return view('newhome');
     }
 
     public function myreservation(){

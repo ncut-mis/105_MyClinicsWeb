@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title> 勤益大聯盟</title>
+        <title> 診所預約平台</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -73,7 +73,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/">勤益大聯盟</a>
+                    <a class="navbar-brand" href="/">診所預約平台</a>
                 </div>
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
@@ -110,7 +110,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="/">勤益大聯盟</a>
+                            <a class="navbar-brand" href="/">診所預約平台</a>
                         </div>
                         <div id="navbar" class="navbar-collapse collapse">
 
