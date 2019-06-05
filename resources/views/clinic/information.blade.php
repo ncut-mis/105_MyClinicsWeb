@@ -97,13 +97,12 @@
                         <div>
                             <h4>
                             <div class="col-sm-12">
-
                             <button type="submit" class="btn btn-default">
-
                                 <i class="fa fa-plus"></i> <h4>預約診所 </h4>
-
                             </button>
-
+                                <button type="submit" class="btn btn-default">
+                                    <a href="{{route('favorite_clinic.create', $clinic->id)}}">加入我的診所</a>
+                                </button>
                             </div>
                             </h4>
                         </div>
