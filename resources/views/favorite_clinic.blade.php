@@ -39,7 +39,14 @@
                             @foreach($clinics as $clinic)
                                 @if($favorite_clinic->clinics_id===$clinic->id)
                             <tr>
-                                <td style="text-align: center">{{ $clinic->name}}</td>
+                                <td>
+                                    <form action="/clinics/{{ $clinic->id }}" method="GET">
+                                        {{ csrf_field() }}
+                                        <button type="submit" class="btn btn-default">
+                                            <i class="fa fa-plus"></i> {{ $clinic->name}}
+                                        </button>
+                                    </form>
+                                </td>
 
                             </tr>
                             @endif

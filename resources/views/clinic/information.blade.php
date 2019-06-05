@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>診所資訊</h1>
+                        <h2>診所資訊</h2>
                         <hr class="small">
                     </div>
                 </div>
@@ -30,47 +30,47 @@
                         {{ csrf_field() }}
                         <div class="form-group">
                             <div class="col-sm-12">
-                                <h2>
+                                <h4>
                             <label>診所名稱：</label>
                             <td>{{ $clinic->name}}</td>
-                                </h2>
+                                </h4>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-sm-12">
-                                <h2>
+                                <h4>
                             <label>電話：</label>
                             <td>{{ $clinic->tel}}</td>
-                                </h2>
+                                </h4>
                             </div>
                         </div>
                         <div class="form-group" >
                             <div class="col-sm-12">
-                                <h2>
+                                <h4>
                             <label>地址：</label>
                             <td>{{ $clinic->address}}</td>
-                                </h2>
+                                </h4>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12">
-                            <h2>
+                            <h4>
                             <label>診所環境：</label>
                               @if($clinic->photo!==null)
                             <td> <img src="{{url('img/clinic/'. $clinic->photo)}}"class="img-thumbnail"></td>
                                   @else
                                     <td>診所尚未上傳照片</td>
                               @endif
-                            </h2>
+                            </h4>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12">
-                                <h2>
+                                <h4>
                             <label>營業時間：</label>
                             <td>{{ $clinic->per_week_sections}}<br></td>
-                                </h2>
+                                </h4>
                             </div>
                         </div>
                         <div>
@@ -79,7 +79,7 @@
                                 @if($staff->id == $doctor->staff_id)
                                      <div class="form-group" >
                                          <div class="col-sm-12">
-                                             <h2>
+                                             <h4>
                                                  <label>醫生：</label>
                                                  <a href="/reservation2/{{ $doctor->id }}">
                                                      <td>{{ $staff->name}}</td>
@@ -87,7 +87,7 @@
                                                  <a href="/doctor/{{ $doctor->id }}">
                                                      <td>/查看資訊</td>
                                                  </a>
-                                             </h2>
+                                             </h4>
                                          </div>
                                      </div>
                                  @endif
@@ -95,7 +95,7 @@
                         @endforeach
                         </div>
                         <div>
-
+                            <h4>
                             <div class="col-sm-12">
 
                             <button type="submit" class="btn btn-default">
@@ -105,7 +105,7 @@
                             </button>
 
                             </div>
-
+                            </h4>
                         </div>
                     </form>
                 </div>

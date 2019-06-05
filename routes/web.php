@@ -60,7 +60,7 @@ Route::get('myreservation/{id}/addreminding', ['as' => 'reservation.addreminding
 
 Route::get('myreservation/{id}/storereminding', ['as' => 'reservation.storereminding'  , 'uses' => 'ReservationController@storereminding']);
 
-Route::get('myreservations/{id}/torereminding', ['as' => 'reservation.storereminding'  , 'uses' => 'ReservationController@storereminding']);
+//Route::get('myreservations/{id}/torereminding', ['as' => 'reservation.storereminding'  , 'uses' => 'ReservationController@storereminding']);
 
 //刪除預約
 Route::get('myreservation/{id}/delete', ['as' => 'reservation.delete'  , 'uses' => 'ReservationController@delete']);
