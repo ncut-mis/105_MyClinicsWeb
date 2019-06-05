@@ -39,10 +39,12 @@
                 </tr>
             </thead>
             <tbody>
+
             @foreach($sections as $section)
+                @if($section->date > date('Y-m-d'))
                 <tr>
                     <td width="100" style="text-align: center">{{$section->date}}</td>
-                    @if($section->start=='09:00:00'&&$section->end=='12:00:00')
+                    @if($section->start=='09:00'&&$section->end=='12:00')
                         @foreach($doctors as $doctor)
                             @if($section->doctor_id == $doctor->id)
                                 @foreach($staffs as $staff)
@@ -55,7 +57,7 @@
                     @else
                         <td width="100" style="text-align: center"></td>
                     @endif
-                    @if($section->start=='14:00:00'&& $section->end=='18:00:00')
+                    @if($section->start=='14:00'&& $section->end=='18:00')
                         @foreach($doctors as $doctor)
                             @if($section->doctor_id == $doctor->id)
                                 @foreach($staffs as $staff)
@@ -68,7 +70,7 @@
                     @else
                         <td width="100" style="text-align: center"></td>
                     @endif
-                    @if($section->start=='18:00:00')
+                    @if($section->start=='18:00')
                         @foreach($doctors as $doctor)
                             @if($section->doctor_id == $doctor->id)
                                 @foreach($staffs as $staff)
@@ -80,7 +82,9 @@
                         @endforeach
                     @endif
                 </tr>
+                @endif
             @endforeach
+
             </tbody>
         </table>
     </from>

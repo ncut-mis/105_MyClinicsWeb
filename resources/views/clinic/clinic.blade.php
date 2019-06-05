@@ -1,4 +1,8 @@
-@extends('newhome')
+@extends('layouts.app')
+
+@section('title', '')
+
+@section('content')
     <header class="intro-header">
         <header>
             <div class="navbar navbar-fixed-top">
@@ -26,3 +30,4 @@
             </div>
         </div>
     </article>
+@endsection
