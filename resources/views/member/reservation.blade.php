@@ -1,6 +1,6 @@
-@extends('newhome')
+@extends('layouts.app')
 
-@section('title', '預約列表')
+@section('title', '我的預約')
 
 @section('content')
 
@@ -23,6 +23,7 @@
             <div>
                 <h4><p>預約資料</p></h4>
             </div>
+
 
 
             <table>

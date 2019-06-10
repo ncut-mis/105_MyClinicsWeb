@@ -79,7 +79,6 @@ class ReservationController extends Controller
         if(Auth::user()==null){
             return view('auth.login');
         }
-        $user = Auth::user()->id;
         $reservations = Reservation::where('section_id',$id)->orderby('id')->get();
         $sections = Section::get();
         $clinics = Clinic::get();
