@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title> 診所預約平台</title>
+        <title> 診所預約聯合網站</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -73,14 +73,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/">診所預約平台</a>
+                    <a class="navbar-brand" href="/">診所預約聯合網站</a>
                 </div>
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="/">首頁</a></li>
                         <li><a href="{{route('clinic.index')}}">所有診所</a></li>
                         <li><a href="{{route('clinic.advance_search.create')}}">找查診所</a></li>
-                        <li><a href="{{route('reservation.myreservation')}}">我的預約</a></li>
+                        <li><a href="{{route('reservation.myreservationlist')}}">我的預約</a></li>
                         <li><a href="{{route('member.information')}}">個人資訊</a></li>
                         <li><a href="{{route('favorite_clinic')}}">我的診所</a></li>
                         @if (Route::has('login'))
@@ -110,7 +110,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="/">診所預約平台</a>
+                            <a class="navbar-brand" href="/">診所預約聯合網站</a>
                         </div>
                         <div id="navbar" class="navbar-collapse collapse">
 
@@ -118,7 +118,7 @@
                                 <li class="active"><a href="/">首頁</a></li>
                                 <li><a href="{{route('clinic.index')}}">線上預約</a></li>
                                 <li><a href="{{route('clinic.advance_search.create')}}">找查診所</a></li>
-                                <li><a href="{{route('reservation.myreservation')}}">我的預約</a></li>
+                                <li><a href="{{route('reservation.myreservationlist')}}">我的預約</a></li>
                                 <li><a href="{{route('member.information')}}">個人資訊</a></li>
                                 <li><a href="{{route('favorite_clinic')}}">我的診所</a></li>
                                 @if (Route::has('login'))

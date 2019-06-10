@@ -11,9 +11,12 @@
 |
 */
 Route::auth();
+/*
 Route::get('/', function () {
     return view('newhome');
 });
+*/
+Route::get('/',  ['as' => 'reservation.home',    'uses' => 'ReservationController@home']);
 Route::get('/home', function () {
     return view('home.home');
 });
@@ -51,9 +54,10 @@ Route::get('member', ['as' => 'member.information'  , 'uses' => 'MemberControlle
 Route::get('favorite_clinic',  ['as' => 'favorite_clinic',    'uses' => 'FavoriteClinicController@index']);
 Route::get('clinic/{id}',    ['as' => 'favorite_clinic.create' , 'uses' => 'FavoriteClinicController@create']);
 
-
+//查看我的預約列表
+Route::get('myreservationlist', ['as' => 'reservation.myreservationlist'  , 'uses' => 'ReservationController@myreservationlist']);
 //查看我的預約
-Route::get('myreservation', ['as' => 'reservation.myreservation'  , 'uses' => 'ReservationController@myreservation']);
+Route::get('myreservation/{id}', ['as' => 'reservation.myreservation'  , 'uses' => 'ReservationController@myreservation']);
 //新增預約提醒
 Route::get('myreservation/{id}/addreminding', ['as' => 'reservation.addreminding'  , 'uses' => 'ReservationController@addreminding']);
 //儲存預約提醒

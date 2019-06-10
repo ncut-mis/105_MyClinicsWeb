@@ -1,10 +1,9 @@
 @extends('layouts.app')
-
-@section('title', '預約診所')
+@section('title', '預約')
 
 @section('content')
 
-    <!-- Page Header -->
+<!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
     <header class="intro-header" style="background-image: url('img/reservation.jpg')">
         <div class="container">

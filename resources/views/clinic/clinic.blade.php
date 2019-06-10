@@ -1,8 +1,8 @@
 @extends('layouts.app')
-
-@section('title', '')
+@section('title', '診所列表')
 
 @section('content')
+
     <header class="intro-header">
         <header>
             <div class="navbar navbar-fixed-top">

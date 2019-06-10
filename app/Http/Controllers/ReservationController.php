@@ -12,6 +12,9 @@ use Illuminate\Http\Request;
 
 class ReservationController extends Controller
 {
+    public function home(){
+        return view ('newhome');
+    }
     public function index($id){
         $sections = Section::where('clinic_id',$id)->orderBy('date')->get();
         $doctors = Doctor::all();
@@ -55,16 +58,26 @@ class ReservationController extends Controller
         $sections->next_register_no = $reservation+1;
         $sections->save();
         //Reservation::all()->update(['next_register_no' =>$reservation+1]);
-        return view('newhome');
+        return view('welcome');
     }
-
-    public function myreservation(){
-        //判斷有無登入
+    public function myreservationlist(){
         if(Auth::user()==null){
             return view('auth.login');
         }
         $user = Auth::user()->id;
         $reservations = Reservation::where('member_id',$user)->orderby('id')->get();
+        $sections = Section::get();
+        $clinics = Clinic::get();
+        $data=['sections'=>$sections,'reservations'=>$reservations,'clinics'=>$clinics,];
+        return view('member.reservationlist', $data);
+    }
+    public function myreservation($id){
+        //判斷有無登入
+        if(Auth::user()==null){
+            return view('auth.login');
+        }
+        $user = Auth::user()->id;
+        $reservations = Reservation::where('section_id',$id)->orderby('id')->get();
         $sections = Section::get();
         $clinics = Clinic::get();
         $doctors = Doctor::all();

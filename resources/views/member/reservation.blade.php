@@ -1,4 +1,9 @@
-@extends('newhome')
+@extends('layouts.app')
+
+@section('title', '預約列表')
+
+@section('content')
+
     <header class="intro-header">
         <div class="container">
             <div class="row">
@@ -18,6 +23,7 @@
             <div>
                 <h4><p>預約資料</p></h4>
             </div>
+
 
             <table>
                 <thead>
@@ -73,3 +79,4 @@
         </div>
     </div>
 
+@endsection
