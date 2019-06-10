@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('newhome')
 
 @section('title', '預約列表')
 

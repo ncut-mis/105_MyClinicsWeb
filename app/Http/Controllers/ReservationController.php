@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Clinic;
 use App\Doctor;
+use App\Post;
 use App\Reservation;
 use App\Section;
 use App\Staff;
@@ -13,7 +14,9 @@ use Illuminate\Http\Request;
 class ReservationController extends Controller
 {
     public function home(){
-        return view ('newhome');
+        $posts = Post::all();
+        $data = ['posts'=>$posts];
+        return view ('home',$data);
     }
     public function index($id){
         $sections = Section::where('clinic_id',$id)->orderBy('date')->get();
