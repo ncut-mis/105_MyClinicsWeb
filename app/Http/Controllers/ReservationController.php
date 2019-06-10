@@ -61,7 +61,9 @@ class ReservationController extends Controller
         $sections->next_register_no = $reservation+1;
         $sections->save();
         //Reservation::all()->update(['next_register_no' =>$reservation+1]);
-        return view('welcome');
+        $posts = Post::all();
+        $data = ['posts'=>$posts];
+        return view('welcome',$data);
     }
     public function myreservationlist(){
         if(Auth::user()==null){
