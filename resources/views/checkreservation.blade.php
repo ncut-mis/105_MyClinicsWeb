@@ -70,6 +70,7 @@
                     <Option value="10">前10號</Option>
                     <Option value="5">前5號</Option>
                     <Option value="3">前3號</Option>
+                    <Option value="2">前2號</Option>
                 </Select>
             </div>
 
