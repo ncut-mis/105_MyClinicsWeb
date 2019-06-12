@@ -20,9 +20,17 @@
             </div>
         </div>
     </header>
+
     <article>
         <div class="container">
             <h1>選擇診所</h1>
+            <form action="{{ route('clinic.search') }}" >
+                <div class="form-group">
+                    <a>勤益大聯盟</a>
+                    <input type="text" class="form-control" name="keyword" placeholder="搜尋">
+                    <button type="submit" >搜尋診所</button>
+                </div>
+            </form>
             <div class="list-group">
                 @foreach ($clinics as $clinic)
                     <a href="/clinics/{{ $clinic->id }}" class="list-group-item list-group-item-action table-responsive" style="text-align: center;">{{ $clinic->name}}</a>
