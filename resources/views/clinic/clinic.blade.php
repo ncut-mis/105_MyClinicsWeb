@@ -26,7 +26,7 @@
             <h1>選擇診所</h1>
             <form action="{{ route('clinic.search') }}" >
                 <div class="form-group">
-                    <a>勤益大聯盟</a>
+                    
                     <input type="text" class="form-control" name="keyword" placeholder="搜尋">
                     <button type="submit" >搜尋診所</button>
                 </div>
