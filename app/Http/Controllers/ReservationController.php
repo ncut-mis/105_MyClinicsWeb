@@ -110,8 +110,10 @@ class ReservationController extends Controller
 
     public function delete($id){
         $reservations = Reservation::find($id)->delete();
-    return view('welcome');
-}
+        $posts = Post::all();
+        $data = ['posts'=>$posts];
+        return view('welcome',$data);
+    }
     public function fire()
     {
         date_default_timezone_set("Asia/Taipei");
