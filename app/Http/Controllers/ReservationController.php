@@ -105,7 +105,9 @@ class ReservationController extends Controller
         $reservations->reminding_time=$reminding_time;
         $reservations->reminding_no=$reminding_no;
         $reservations->save();
-        return view('welcome');
+        $posts = Post::all();
+        $data = ['posts'=>$posts];
+        return view('welcome',$data);
     }
 
     public function delete($id){
