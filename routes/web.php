@@ -26,6 +26,8 @@ Route::get('clinic',  ['as' => 'clinic.index',    'uses' => 'ClinicController@in
 Route::get('clinics/{id}',  ['as' => 'clinic.information',    'uses' => 'ClinicController@information']);
 //某醫生資訊
 Route::get('doctor/{id}',  ['as' => 'clinic.doctorinformation',    'uses' => 'ClinicController@doctorinformation']);
+//加入我的醫生
+Route::get('doctor/{id}/favorite',  ['as' => 'member.favoritedoctor',    'uses' => 'MemberController@favoritedoctor']);
 
 //根據診所預約
 Route::get('reservation/{id}',  ['as' => 'reservation.index',    'uses' => 'ReservationController@index']);

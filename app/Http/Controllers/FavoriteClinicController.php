@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Doctor;
+use App\FavoriteDoctor;
+use App\Staff;
 use Illuminate\Http\Request;
 use Auth;
 use App\FavoriteClinic;
@@ -27,7 +30,11 @@ class FavoriteClinicController extends Controller
         //$favoriteclinic=FavoriteClinic::orderBy('user_id','=',Auth::user()->id)->get();
         $favorite_clinics=FavoriteClinic::where('user_id','=',Auth::user()->id)->get();
         $clinics = Clinic::orderBy('id')->get();
-        $date = ['favorite_clinics'=>$favorite_clinics,'clinics'=>$clinics];
+
+        $favorite_doctors =FavoriteDoctor::where('user_id',Auth::user()->id)->get();
+        $staffs = Staff::all();
+        $doctors = Doctor::all();
+        $date = ['favorite_clinics'=>$favorite_clinics,'clinics'=>$clinics,'favorite_doctors'=>$favorite_doctors,'staffs'=>$staffs,'doctors'=>$doctors];
         return view('favorite_clinic',$date);
     }
 
