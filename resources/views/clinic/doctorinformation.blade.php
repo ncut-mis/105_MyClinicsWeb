@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>醫生資訊</h1>
+                        <h2>醫生資訊</h2>
                         <hr class="small">
                     </div>
                 </div>
@@ -30,55 +30,65 @@
                         {{ csrf_field() }}
                         <div class="form-group">
                             <div class="col-sm-12">
-                                <h2>
+                                <h4>
                             <label>醫生名字：</label>
                                     @foreach($staffs as $staff)
                                         @if($doctors->staff_id == $staff->id)
                                             <a>{{$staff->name}}</a>
                                         @endif
                                     @endforeach
-                                </h2>
+                                </h4>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-sm-12">
-                                <h2>
+                                <h4>
                             <label>專長：</label>
                             <a>{{$doctors->specialties}}</a>
-                                </h2>
+                                </h4>
                             </div>
                         </div>
                         <div class="form-group" >
                             <div class="col-sm-12">
-                                <h2>
+                                <h4>
                             <label>經歷：</label>
                             <a>{{$doctors->experiences}}</a>
-                                </h2>
+                                </h4>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12">
-                            <h2>
+                            <h4>
                                 <label>學歷：</label>
                                 <a>{{$doctors->degrees}}</a>
-                            </h2>
+                            </h4>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <h4>
+                                    <label>駐診日期：</label>
+                                    <a>{{$doctors->clinic_date}}</a>
+                                </h4>
                             </div>
                         </div>
                         <div>
-
                             <div class="col-sm-12">
-
                             <button type="submit" class="btn btn-default">
-
                                 <i class="fa fa-plus"></i> <h4>預約診所 </h4>
-
                             </button>
 
                             </div>
-
                         </div>
                     </form>
+
+                        <div class="col-sm-12">
+                        <button type="submit" class="btn btn-default">
+                            <a href="{{route('member.favoritedoctor', $doctors->id)}}"> <h4>加入我的醫生 </h4></a>
+                        </button>
+                        </div>
+
                 </div>
             </div>
         </div>

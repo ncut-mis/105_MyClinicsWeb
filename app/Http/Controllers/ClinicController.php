@@ -20,7 +20,7 @@ class ClinicController extends Controller
     public function information($id){
         $clinics=Clinic::find($id);
         $doctors = Doctor::where('clinic_id',$id)->get();
-        $staff = Staff::where('clinic_id',$id)->where('position_id','1')->get();
+        $staff = Staff::where('clinic_id',$id)->where('position_id','4')->get();
         $data=['clinic'=>$clinics,'doctors'=>$doctors,'staff'=>$staff];
         return view('clinic.information', $data);
     }
