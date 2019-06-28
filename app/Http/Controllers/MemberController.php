@@ -28,6 +28,21 @@ class MemberController extends Controller
         return view('member.information', $data);
 
     }
+
+    public function favoritedoctor($id){
+        if(Auth::user()==null){
+            return view('auth.login');
+        }
+        $doctors = Doctor::find($id);
+        FavoriteDoctor::create([
+            'user_id' =>Auth::user()->id,
+            'doctor_id' => $doctors->id,
+        ]);
+        $posts = Post::all();
+        $data = ['posts'=>$posts];
+        return view('welcome',$data);
+    }
+
     public function index()
     {
         //
