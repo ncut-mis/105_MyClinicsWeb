@@ -17,4 +17,9 @@ class Member extends Model
     {
         return $this->hasMany(FavoriteClinic::class);
     }
+
+    public function favoritedoctor()
+    {
+        return $this->hasMany(FavoriteDoctor::class);
+    }
 }
