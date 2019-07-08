@@ -84,9 +84,9 @@
                     </form>
 
                         <div class="col-sm-12">
-                        <button type="submit" class="btn btn-default">
-                            <a href="{{route('member.favoritedoctor', $doctors->id)}}"> <h4>加入我的醫生 </h4></a>
-                        </button>
+                            <br> <button type="submit" class="btn btn-default">
+                                 <a href="{{route('member.favoritedoctor', $doctors->id)}}"> <h4>加入我的醫生 </h4></a>
+                                 </button>
                         </div>
 
                 </div>

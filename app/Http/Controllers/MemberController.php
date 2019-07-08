@@ -8,6 +8,7 @@ use App\Doctor;
 use Illuminate\Http\Request;
 use app\User;
 use Auth;
+use App\FavoriteDoctor;
 class MemberController extends Controller
 {
     /**
@@ -38,9 +39,7 @@ class MemberController extends Controller
             'user_id' =>Auth::user()->id,
             'doctor_id' => $doctors->id,
         ]);
-        $posts = Post::all();
-        $data = ['posts'=>$posts];
-        return view('welcome',$data);
+        return back();
     }
 
     public function index()

@@ -28,7 +28,7 @@
                                         <form action="/clinics/{{ $clinic->id }}" method="GET">
                                             {{ csrf_field() }}
                                             <button type="submit" class="btn btn-default">
-                                                <i class="fa fa-plus"></i> {{ $clinic->name}}
+                                                {{ $clinic->name}}
                                             </button>
                                         </form>
                                     </td>
@@ -40,6 +40,7 @@
                     </tbody>
                 </table>
             </div>
+            <div class="container">
             <h2>醫生</h2>
             <div class="row">
                 <div class="row">
@@ -57,7 +58,7 @@
                                                     <form action="/doctor/{{ $doctor->id }}" method="GET">
                                                         {{ csrf_field() }}
                                                         <button type="submit" class="btn btn-default">
-                                                            <i class="fa fa-plus"></i> {{ $staff->name}}
+                                                           {{ $staff->name}}
                                                         </button>
                                                     </form>
                                                 </td>
@@ -71,6 +72,8 @@
                     </table>
                 </div>
             </div>
+            </div>
         </div>
+    </div>
 </article>
 
