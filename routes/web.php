@@ -54,7 +54,8 @@ Route::get('member', ['as' => 'member.information'  , 'uses' => 'MemberControlle
 
 //我的診所
 Route::get('favorite_clinic',  ['as' => 'favorite_clinic',    'uses' => 'FavoriteClinicController@index']);
-Route::get('clinic/{id}',    ['as' => 'favorite_clinic.create' , 'uses' => 'FavoriteClinicController@create']);
+Route::get('clinic/{clinics}',    ['as' => 'favorite_clinic.create' , 'uses' => 'FavoriteClinicController@create']);
+Route::delete('favorite_clinic/{favorite_clinics}/destroy',    ['as' => 'favorite_clinic.destroy' , 'uses' => 'FavoriteClinicController@destroy']);
 
 //查看我的預約列表
 Route::get('myreservationlist', ['as' => 'reservation.myreservationlist'  , 'uses' => 'ReservationController@myreservationlist']);

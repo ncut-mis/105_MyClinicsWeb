@@ -16,9 +16,8 @@ class FavoriteClinicController extends Controller
         $this->middleware('auth');
     }
 
-    public function create($id){
+    public function create(Clinic $clinics){
 
-        $clinics=Clinic::find($id);
         FavoriteClinic::create([
             'user_id' =>Auth::user()->id,
             'clinics_id' => $clinics->id,
@@ -38,11 +37,10 @@ class FavoriteClinicController extends Controller
         return view('favorite_clinic',$date);
     }
 
-    public function destroy($id)
+    public function destroy(FavoriteClinic $favorite_clinics)
     {
-        $favoriteclinics = FavoriteClinic::find($id);
-        $favoriteclinics->delete();
-        return redirect()->back();
+        $favorite_clinics->delete();
+        return redirect()->route('favorite_clinic');
     }
 
 
