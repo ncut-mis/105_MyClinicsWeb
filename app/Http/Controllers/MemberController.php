@@ -10,7 +10,7 @@ use App\Post;
 use Illuminate\Http\Request;
 use app\User;
 use Auth;
-use App\FavoriteDoctor;
+
 class MemberController extends Controller
 {
     /**
