@@ -82,7 +82,7 @@
 </div>
 <div class="container">
     <div>
-
+        <a>{{$msg}}</a>
         <div>
             <h4><p>系統公告</p></h4>
         </div>

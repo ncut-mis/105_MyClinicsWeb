@@ -13,11 +13,7 @@ use Illuminate\Http\Request;
 
 class ReservationController extends Controller
 {
-    public function home(){
-        $posts = Post::all();
-        $data = ['posts'=>$posts];
-        return view ('home',$data);
-    }
+
     public function index($id){
         $sections = Section::where('clinic_id',$id)->orderBy('date')->get();
         $doctors = Doctor::all();
@@ -25,7 +21,7 @@ class ReservationController extends Controller
         $data	=	['sections'=> $sections,'staffs'=>$staffs,'doctors'=>$doctors];
         return view('reservation2',$data);
     }
-    public function index2($id){
+    public function index_doctor($id){
         $sections = Section::where('doctor_id',$id)->orderBy('date')->get();
         $doctors = Doctor::all();
         $staffs = Staff::all();
@@ -36,35 +32,7 @@ class ReservationController extends Controller
     /**
      * @param $id
      */
-    public function check($id){
-        $sections = Section::find($id);
-        $clinics = Clinic::all();
-        $doctors = Doctor::all();
-        $staffs = Staff::all();
-        $data = ['sections'=>$sections,'clinics'=>$clinics,'staffs'=>$staffs,'doctors'=>$doctors];
-        return view('checkreservation',$data);
-    }
-    public function store(Request $request,$id){
-        $sections = Section::find($id);
-        $reservation = $sections->next_register_no;
-        $reminding_time=$request->input('reminding_time');
-        $reminding_no=$request->input('reminding_no');
-        Reservation::create([
-            'section_id' => $id,
-            'member_id' => auth()->user()->id,
-            'reservation_no' => $reservation,
-            'reminding_time' =>$reminding_time,
-            'reminding_no' =>$reminding_no,
-            'status' => '-1',
-            'created_at' => date("Y-m-d",strtotime('8hours')),
-        ]);
-        $sections->next_register_no = $reservation+1;
-        $sections->save();
-        //Reservation::all()->update(['next_register_no' =>$reservation+1]);
-        $posts = Post::all();
-        $data = ['posts'=>$posts];
-        return view('welcome',$data);
-    }
+
     public function myreservationlist(){
         if(Auth::user()==null){
             return view('auth.login');
@@ -91,7 +59,7 @@ class ReservationController extends Controller
         return view('member.reservation', $data);
     }
 
-    public function addreminding($id){
+    public function revisereminding($id){
         $reservations = Reservation::find($id);
         $data = ['reservations'=>$reservations];
         return view('reminding',$data);
@@ -106,15 +74,17 @@ class ReservationController extends Controller
         $reservations->reminding_no=$reminding_no;
         $reservations->save();
         $posts = Post::all();
-        $data = ['posts'=>$posts];
-        return view('welcome',$data);
+        $msg = '修改成功';
+        $data = ['posts'=>$posts,'msg'=>$msg];
+        return view('home_msg',$data);
     }
 
     public function delete($id){
-        $reservations = Reservation::find($id)->delete();
+        Reservation::find($id)->delete();
         $posts = Post::all();
-        $data = ['posts'=>$posts];
-        return view('welcome',$data);
+        $msg = '刪除成功';
+        $data = ['posts'=>$posts,'msg'=>$msg];
+        return view('home_msg',$data);
     }
     public function fire()
     {

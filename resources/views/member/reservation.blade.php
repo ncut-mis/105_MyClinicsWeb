@@ -64,10 +64,10 @@
                             <td width="100" style="text-align: center">{{$reservation->reservation_no}}號</td>
                             <td width="100" style="text-align: center">{{$section->current_no}}號</td>
                             @if($reservation->reminding_time==null && $reservation->reminding_no==null)
-                                <td width="100" style="text-align: center"><a href="{{$reservation->id}}/addreminding">新增提醒</a></td>
+                                <td width="100" style="text-align: center"><a href="{{$reservation->id}}/revisereminding">新增提醒</a></td>
                             @else
-                                <td width="100" style="text-align: center"><a href="{{$reservation->id}}/addreminding">前{{$reservation->reminding_time}}小時</a></td>
-                                <td width="100" style="text-align: center"><a href="{{$reservation->id}}/addreminding">前{{$reservation->reminding_no}}號</a></td>
+                                <td width="100" style="text-align: center"><a href="{{$reservation->id}}/revisereminding">前{{$reservation->reminding_time}}小時</a></td>
+                                <td width="100" style="text-align: center"><a href="{{$reservation->id}}/revisereminding">前{{$reservation->reminding_no}}號</a></td>
 
                             @endif
                             <td width="100" style="text-align: center"><a href="{{$reservation->id}}/delete">刪除預約</a></td>

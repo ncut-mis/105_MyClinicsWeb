@@ -54,7 +54,7 @@
                                         @if($doctor->staff_id == $staff->id)
                                             <tr>
                                                 <td>
-                                                    <form action="/doctor/{{ $doctor->id }}" method="GET">
+                                                    <form action="/doctor/{{ $doctor->id }}/show" method="GET">
                                                         {{ csrf_field() }}
                                                         <button type="submit" class="btn btn-default">
                                                             <i class="fa fa-plus"></i> {{ $staff->name}}

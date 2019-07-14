@@ -28,8 +28,11 @@
             <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
             <!-- NOTE: To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
         </div>
-        <form  action="{{route('reservation.store',($sections->id))}}" >
+        <form  action="{{route('section.reservations.store',($sections->id))}}" >
 
+            <div class="form-group">
+                <label>姓名：</label><a>{{Auth::user()->name}}</a>
+            </div>
             <div class="form-group">
                 <label>日期：</label><a>{{$sections->date}}</a>
             </div>

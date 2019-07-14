@@ -264,7 +264,7 @@ header ul.nav li ul li ul {
   border-right: none;
   border-bottom: none;
   border-left: none;
-  border-bottom-color: none;
+
   content:none;
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
@@ -470,16 +470,7 @@ section.callaction {
       cursor: pointer;
       /*box-shadow: 0px 0px 2px 0px rgb(155, 155, 155);*/
       border-radius: 8px; }
-  #clients .client .client1 {
-    background: url("../img/client1.png") 0 -75px; }
-    #clients .client .client1:hover {
-      background-position: 1px 0px; }
-  #clients .client .client2 {
-    background: url("../img/client2.png") 0 -75px; }
-    #clients .client .client2:hover {
-      background-position: -1px 0px; }
-  #clients .client .client3 {
-    background: url("../img/client3.png") 0 -76px; }
+
     #clients .client .client3:hover {
       background-position: 0px 0px; }
 
@@ -567,7 +558,7 @@ section.callaction {
     font-weight: 300;
     margin-bottom: 20px;
     position: relative;
-    word-break: break-word;
+
 }
 
 .features .features-item {
@@ -606,7 +597,8 @@ section.callaction {
   transform: scale(1);
 }
 .features img{
-margin: 10px 0 0 0;
+
+margin: 10px 0 0 0;
 }
 /* page headline
 ==================================== */
@@ -873,9 +865,12 @@ ul.portfolio-categ li a{
 	color:#353535;
 }
 ul.portfolio-categ li.active{
-border: 1px solid #000000;
-background-color: #000000;
-color: #0F0F29 !important;
+
+border: 1px solid #000000;
+
+background-color: #000000;
+
+color: #0F0F29 !important;
 }
 ul.portfolio-categ li.active a:hover, ul.portfolio-categ li a:hover,ul.portfolio-categ li a:focus,ul.portfolio-categ li a:active {
 	text-decoration:none;
@@ -1483,7 +1478,7 @@ article img.pull-right, article .align-right{
 	float:right;
 	margin:5px 0 15px 15px;
 }
- ============================= */
+
 
 .clear-marginbot{
 	margin-bottom:0;

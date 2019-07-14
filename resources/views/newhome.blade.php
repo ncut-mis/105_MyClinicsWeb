@@ -18,6 +18,10 @@
     <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
     <link href="css/flexslider.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
+
+
+    <link href="css/magnific-popup.css" rel="stylesheet">
+    <link href="css/gallery-1.css" rel="stylesheet">
     <!-- Styles -->
     <style>
         .full-height {

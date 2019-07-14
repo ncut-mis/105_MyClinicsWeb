@@ -1,14 +1,16 @@
 @extends('layouts.app')
-@section('title', '診所列表')
+
+@section('title', '選擇診所')
 
 @section('content')
 
-    <header class="intro-header">
+    <headr class="intro-header">
         <header>
             <div class="navbar navbar-fixed-top">
                 <div class="container">
                 </div>
             </div>
+
         </header>
         <div class="container">
             <div class="row">
@@ -19,23 +21,45 @@
                 </div>
             </div>
         </div>
-    </header>
+
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
+        <link href="css/flexslider.css" rel="stylesheet" />
+        <link href="css/magnific-popup.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/gallery-1.css" rel="stylesheet">
+
+
+    </headr>
 
     <article>
+
         <div class="container">
-            <h1>選擇診所</h1>
+            <h2>選擇診所</h2>
+
+            <form >
+                <div class="editContent">
+                    <ul class="filter">
+                    @foreach($categories as $category)
+                            <li class="active"><a href = 'clinic/category/{{$category->id}}'>{{$category->category}}</a></li>
+                    @endforeach
+                    </ul>
+                </div>
+            </form>
             <form action="{{ route('clinic.search') }}" >
                 <div class="form-group">
 
                     <input type="text" class="form-control" name="keyword" placeholder="搜尋">
-                    <button type="submit" >搜尋診所</button>
+                    <button type="submit" class="btn btn-default">搜尋診所</button>
                 </div>
             </form>
             <div class="list-group">
                 @foreach ($clinics as $clinic)
-                    <a href="/clinics/{{ $clinic->id }}" class="list-group-item list-group-item-action table-responsive" style="text-align: center;">{{ $clinic->name}}</a>
+                    <a href="/clinics/{{ $clinic->id }}/show" class="list-group-item list-group-item-action table-responsive" style="text-align: center;">{{ $clinic->name}}</a>
                 @endforeach
             </div>
         </div>
     </article>
+
 @endsection
+
