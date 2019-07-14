@@ -32,12 +32,6 @@
                                             </button>
                                         </form>
                                     </td>
-                                    <td>
-                                        <form action="{{ route('favorite_clinic.destroy', $favorite_clinic) }}" method="POST">
-                                            {{ csrf_field() }}
-                                            {{ method_field('DELETE') }}
-                                            <button type="submit" class="btn btn-link">移除</button></form>
-                                    </td>
                                 </tr>
                             @endif
                         @endforeach
