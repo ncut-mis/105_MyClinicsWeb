@@ -19,7 +19,41 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
 
+        .filter {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 60px 0;
+            text-align: center;
+        }
+        .filter li {
+            display: inline-block;
+            margin: 0;
+        }
+        .filter li:before {
+            display: inline-block;
+            content: "/";
+            padding: 0 25px 0 19px;
+            color: rgba(0,0,0,0.20);
+        }
+        .filter li:first-child:before {
+            display: none;
+        }
+        .filter li a {
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+        .filter li a:hover,
+        .filter li a:focus,
+        .filter li a.active {
+            color: #03b4c8;
+            text-decoration: none;
+        }
+
+    </style>
 </head>
 <body>
     <div id="app">

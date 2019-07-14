@@ -22,12 +22,7 @@
             </div>
         </div>
 
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
-        <link href="css/flexslider.css" rel="stylesheet" />
-        <link href="css/magnific-popup.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet" />
-        <link href="css/gallery-1.css" rel="stylesheet">
+
 
 
     </headr>
@@ -41,7 +36,7 @@
                 <div class="editContent">
                     <ul class="filter">
                     @foreach($categories as $category)
-                            <li class="active"><a href = 'clinic/category/{{$category->id}}'>{{$category->category}}</a></li>
+                            <li class="active"><a href="{{route('clinic.category.index', $category->id)}}">{{$category->category}}</a></li>
                     @endforeach
                     </ul>
                 </div>
@@ -50,9 +45,10 @@
                 <div class="form-group">
 
                     <input type="text" class="form-control" name="keyword" placeholder="搜尋">
-                    <button type="submit" class="btn btn-default">搜尋診所</button>
+                    <button type="submit" class="btn btn-defaul">搜尋診所</button>
                 </div>
             </form>
+
             <div class="list-group">
                 @foreach ($clinics as $clinic)
                     <a href="/clinics/{{ $clinic->id }}/show" class="list-group-item list-group-item-action table-responsive" style="text-align: center;">{{ $clinic->name}}</a>
