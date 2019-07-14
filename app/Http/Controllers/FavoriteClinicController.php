@@ -16,11 +16,11 @@ class FavoriteClinicController extends Controller
         $this->middleware('auth');
     }
 
-    public function create(Clinic $clinics){
+    public function create(Clinic $clinic){
 
         FavoriteClinic::create([
             'user_id' =>Auth::user()->id,
-            'clinics_id' => $clinics->id,
+            'clinics_id' => $clinic->id,
         ]);
         return back();
     }
@@ -39,8 +39,8 @@ class FavoriteClinicController extends Controller
 
     public function delete($id)
     {
-        $user = Auth::user()->id;
-        $favoriteclinics = FavoriteClinic::where('user_id',$user)->where('clinics_id',$id);
+        //$user = Auth::user()->id;
+        $favoriteclinics = FavoriteClinic::where('user_id', Auth::user()->id)->where('clinics_id',$id);
         $favoriteclinics->delete();
         return redirect()->back();
 
