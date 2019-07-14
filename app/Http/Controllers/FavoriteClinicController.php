@@ -38,9 +38,10 @@ class FavoriteClinicController extends Controller
         return view('favorite_clinic',$date);
     }
 
-    public function destroy($id)
+    public function delete($id)
     {
-        $favoriteclinics = FavoriteClinic::find($id);
+        $user = Auth::user()->id;
+        $favoriteclinics = FavoriteClinic::where('user_id',$user)->where('clinics_id',$id);
         $favoriteclinics->delete();
         return redirect()->back();
     }

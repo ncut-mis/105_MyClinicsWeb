@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Clinic;
 use App\Diagnosis;
 use App\Doctor;
+use App\FavoriteDoctor;
+use App\Post;
 use Illuminate\Http\Request;
 use app\User;
 use Auth;
@@ -19,7 +21,6 @@ class MemberController extends Controller
         if(Auth::user()==null){
             return view('auth.login');
         }
-
         $users = Auth::user()->id;
         $diagnoses = Diagnosis::where('member_id',$users)->get();
         $clinics = Clinic::all();
@@ -38,9 +39,15 @@ class MemberController extends Controller
             'user_id' =>Auth::user()->id,
             'doctor_id' => $doctors->id,
         ]);
-        $posts = Post::all();
-        $data = ['posts'=>$posts];
-        return view('welcome',$data);
+        return redirect()->back();
+    }
+
+    public function favoritedoctordelete($id)
+    {
+        $user = Auth::user()->id;
+        $favoritedoctor = FavoriteDoctor::where('user_id',$user)->where('doctor_id',$id);
+        $favoritedoctor->delete();
+        return redirect()->back();
     }
 
     public function index()

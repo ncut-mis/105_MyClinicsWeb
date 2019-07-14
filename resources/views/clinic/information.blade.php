@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '勤益大聯盟|所有診所')
+@section('title', '診所資訊')
 
 @section('content')
 
@@ -81,10 +81,10 @@
                                          <div class="col-sm-12">
                                              <h4>
                                                  <label>醫生：</label>
-                                                 <a href="/reservation2/{{ $doctor->id }}">
+                                                 <a href="/reservation_doctor/{{ $doctor->id }}">
                                                      <td>{{ $staff->name}}</td>
                                                  </a>
-                                                 <a href="/doctor/{{ $doctor->id }}">
+                                                 <a href="/doctor/{{ $doctor->id }}/show">
                                                      <td>/查看資訊</td>
                                                  </a>
                                              </h4>
@@ -98,10 +98,15 @@
                             <h4>
                             <div class="col-sm-12">
                             <button type="submit" class="btn btn-default">
-                                <i class="fa fa-plus"></i> <h4>預約診所 </h4>
+                                <i class="fa fa-plus"></i> <h4>預約診所</h4>
                             </button>
                                 <button type="submit" class="btn btn-default">
-                                    <a href="{{route('favorite_clinic.create', $clinic->id)}}">加入我的診所</a>
+                                    @if(count($check) == 0)
+                                        <a href="{{route('favorite_clinic.create', $clinic->id)}}">加入我的診所</a>
+                                    @endif
+                                    @if(count($check) != 0)
+                                        <a href="{{route('favorite_clinic.delete', $clinic->id)}}">取消我的診所</a>
+                                    @endif
                                 </button>
                             </div>
                             </h4>
