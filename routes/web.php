@@ -64,6 +64,7 @@ Route::get('clinic/{clinic}/create',    ['as' => 'favorite_clinic.create' , 'use
 //取消我的診所
 Route::get('clinic/{clinic}/delete',    ['as' => 'favorite_clinic.delete' , 'uses' => 'FavoriteClinicController@delete']);
 
+
 //查看我的預約列表
 Route::get('myreservationlist', ['as' => 'reservation.myreservationlist'  , 'uses' => 'ReservationController@myreservationlist']);
 //查看我的預約

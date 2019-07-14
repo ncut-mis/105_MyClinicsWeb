@@ -107,6 +107,7 @@
                                     @if(count($check) != 0)
                                         <a href="{{route('favorite_clinic.delete', $clinic->id)}}">取消我的診所</a>
                                     @endif
+
                                 </button>
                             </div>
                             </h4>

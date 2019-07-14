@@ -10,6 +10,7 @@ use App\Post;
 use Illuminate\Http\Request;
 use app\User;
 use Auth;
+use App\FavoriteDoctor;
 class MemberController extends Controller
 {
     /**
@@ -39,6 +40,7 @@ class MemberController extends Controller
             'user_id' =>Auth::user()->id,
             'doctor_id' => $doctors->id,
         ]);
+
         return redirect()->back();
     }
 
@@ -48,6 +50,7 @@ class MemberController extends Controller
         $favoritedoctor = FavoriteDoctor::where('user_id',$user)->where('doctor_id',$id);
         $favoritedoctor->delete();
         return redirect()->back();
+
     }
 
     public function index()
