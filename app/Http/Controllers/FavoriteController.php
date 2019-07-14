@@ -16,6 +16,7 @@ class FavoriteController extends Controller
         $this->middleware('auth');
     }
 
+
     public function index(){
         //$favoriteclinic=FavoriteClinic::orderBy('user_id','=',Auth::user()->id)->get();
         if(Auth::user()==null){
@@ -45,8 +46,8 @@ class FavoriteController extends Controller
 
     public function delete_clinic($id)
     {
-        $user = Auth::user()->id;
-        $favoriteclinics = FavoriteClinic::where('user_id',$user)->where('clinics_id',$id);
+        //$user = Auth::user()->id;
+        $favoriteclinics = FavoriteClinic::where('user_id', Auth::user()->id)->where('clinics_id',$id);
         $favoriteclinics->delete();
         return redirect()->back();
 
