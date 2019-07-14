@@ -31,27 +31,7 @@ class MemberController extends Controller
 
     }
 
-    public function favoritedoctor($id){
-        if(Auth::user()==null){
-            return view('auth.login');
-        }
-        $doctors = Doctor::find($id);
-        FavoriteDoctor::create([
-            'user_id' =>Auth::user()->id,
-            'doctor_id' => $doctors->id,
-        ]);
 
-        return redirect()->back();
-    }
-
-    public function favoritedoctordelete($id)
-    {
-        $user = Auth::user()->id;
-        $favoritedoctor = FavoriteDoctor::where('user_id',$user)->where('doctor_id',$id);
-        $favoritedoctor->delete();
-        return redirect()->back();
-
-    }
 
     public function index()
     {

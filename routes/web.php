@@ -28,10 +28,7 @@ Route::get('clinic',  ['as' => 'clinic.index',    'uses' => 'ClinicController@in
 Route::get('clinics/{clinic}/show',  ['as' => 'clinic.show',    'uses' => 'ClinicController@show']);
 //某醫生資訊
 Route::get('doctor/{doctor}/show',  ['as' => 'doctor.show',    'uses' => 'DoctorController@show']);
-//加入我的醫生
-Route::get('doctor/{doctor}/favorite',  ['as' => 'member.favoritedoctor',    'uses' => 'MemberController@favoritedoctor']);
-//取消我的醫生
-Route::get('doctor/{doctor}/delete',  ['as' => 'member.favoritedoctor.delete',    'uses' => 'MemberController@favoritedoctordelete']);
+
 
 //根據診所預約
 Route::get('reservation/{clinic}',  ['as' => 'reservation.index',    'uses' => 'ReservationController@index']);
@@ -58,11 +55,15 @@ Route::get('member', ['as' => 'member.information'  , 'uses' => 'MemberControlle
 
 
 //我的診所/醫生
-Route::get('favorite_clinic',  ['as' => 'favorite_clinic',    'uses' => 'FavoriteClinicController@index']);
+Route::get('favorite',  ['as' => 'favorite',    'uses' => 'FavoriteController@index']);
 //加入我的診所
-Route::get('clinic/{clinic}/create',    ['as' => 'favorite_clinic.create' , 'uses' => 'FavoriteClinicController@create']);
+Route::get('clinic/{clinic}/favorite/create',    ['as' => 'favorite_create_clinic' , 'uses' => 'FavoriteController@create_clinic']);
 //取消我的診所
-Route::get('clinic/{clinic}/delete',    ['as' => 'favorite_clinic.delete' , 'uses' => 'FavoriteClinicController@delete']);
+Route::get('clinic/{clinic}/favorite/delete',    ['as' => 'favorite_delete_clinic' , 'uses' => 'FavoriteController@delete_clinic']);
+//加入我的醫生
+Route::get('doctor/{doctor}/favorite/create',  ['as' => 'favorite_create_doctor',    'uses' => 'FavoriteController@create_doctor']);
+//取消我的醫生
+Route::get('doctor/{doctor}/favorite/delete',  ['as' => 'favorite_delete_doctor',    'uses' => 'FavoriteController@delete_doctor']);
 
 
 //查看我的預約列表

@@ -102,10 +102,10 @@
                             </button>
                                 <button type="submit" class="btn btn-default">
                                     @if(count($check) == 0)
-                                        <a href="{{route('favorite_clinic.create', $clinic->id)}}">加入我的診所</a>
+                                        <a href="{{route('favorite_create_clinic', $clinic->id)}}">加入我的診所</a>
                                     @endif
                                     @if(count($check) != 0)
-                                        <a href="{{route('favorite_clinic.delete', $clinic->id)}}">取消我的診所</a>
+                                        <a href="{{route('favorite_delete_clinic', $clinic->id)}}">取消我的診所</a>
                                     @endif
 
                                 </button>

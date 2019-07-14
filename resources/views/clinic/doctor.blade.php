@@ -86,10 +86,10 @@
                         <div class="col-sm-12">
                             <br> <button type="submit" class="btn btn-default">
                             @if(count($check) == 0)
-                                <a href="{{route('member.favoritedoctor', $doctors->id)}}"> <h4>加入我的醫生 </h4></a>
+                                <a href="{{route('favorite_create_doctor', $doctors->id)}}"> <h4>加入我的醫生 </h4></a>
                             @endif
                             @if(count($check) != 0)
-                                    <a href="{{route('member.favoritedoctor.delete', $doctors->id)}}"> <h4>取消我的醫生 </h4></a>
+                                    <a href="{{route('favorite_delete_doctor', $doctors->id)}}"> <h4>取消我的醫生 </h4></a>
                             @endif
 
                         </button>

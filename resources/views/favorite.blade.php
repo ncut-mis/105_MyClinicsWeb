@@ -25,7 +25,7 @@
                             @if($favorite_clinic->clinics_id===$clinic->id)
                                 <tr>
                                     <td>
-                                        <form action="/clinics/{{ $clinic->id }}" method="GET">
+                                        <form action="/clinics/{{ $clinic->id }}/show" method="GET">
                                             {{ csrf_field() }}
                                             <button type="submit" class="btn btn-default">
                                                 {{ $clinic->name}}
@@ -33,9 +33,7 @@
                                         </form>
                                     </td>
                                     <td>
-                                        <form action="{{ route('favorite_clinic.destroy', $favorite_clinic) }}" method="POST">
-                                            {{ csrf_field() }}
-                                            {{ method_field('DELETE') }}
+                                        <form action="{{ route('favorite_delete_clinic', $clinic->id) }}">
                                             <button type="submit" class="btn btn-link">移除</button></form>
                                     </td>
                                 </tr>
@@ -66,6 +64,11 @@
                                                            {{ $staff->name}}
                                                         </button>
                                                     </form>
+                                                </td>
+                                                <td>
+                                                    <form action="{{ route('favorite_delete_doctor', $doctor->id) }}" >
+
+                                                        <button type="submit" class="btn btn-link">移除</button></form>
                                                 </td>
                                             </tr>
                                         @endif

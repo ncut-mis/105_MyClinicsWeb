@@ -82,11 +82,11 @@
             <div class="navbar-collapse collapse ">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="/">首頁</a></li>
-                    <li><a href="{{route('clinic.index')}}">所有診所</a></li>
+                    <li><a href="{{route('clinic.index')}}">線上預約</a></li>
                     <li><a href="{{route('clinic.advance_search.create')}}">找查診所</a></li>
                     <li><a href="{{route('reservation.myreservationlist')}}">我的預約</a></li>
                     <li><a href="{{route('member.information')}}">個人資訊</a></li>
-                    <li><a href="{{route('favorite_clinic')}}">我的診所/醫生</a></li>
+                    <li><a href="{{route('favorite')}}">我的診所/醫生</a></li>
                     @if (Route::has('login'))
                         @auth
                             <li><a href="{{ url('/home') }}">帳戶首頁</a></li>
@@ -124,7 +124,7 @@
                             <li><a href="{{route('clinic.advance_search.create')}}">找查診所</a></li>
                             <li><a href="{{route('reservation.myreservationlist')}}">我的預約</a></li>
                             <li><a href="{{route('member.information')}}">個人資訊</a></li>
-                            <li><a href="{{route('favorite_clinic')}}">我的診所/醫生</a></li>
+                            <li><a href="{{route('favorite')}}">我的診所/醫生</a></li>
                             @if (Route::has('login'))
                                 @auth
                                     <li><a href="{{ url('/home') }}">帳戶首頁</a></li>
